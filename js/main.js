@@ -15,7 +15,7 @@
   
   $(document).scroll(function () {
 	var $nav = $(".bg-light");
-	$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+	$nav.toggleClass('scrolled shadow-sm', $(this).scrollTop() > $nav.height());
   });
   //primary navigation slide-in effect
   /*if ($(window).width() > MQL) {
