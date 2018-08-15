@@ -780,6 +780,17 @@ ul.footer-links li:hover * {
   border-color: #231F20 !important;
 }
 
+.btn-success {
+  background-color: #03733F;
+  border-color: #03733F;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active {
+  color: #fff;
+  background-color: #36454F !important;
+  border-color: #36454F !important;
+}
+
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
