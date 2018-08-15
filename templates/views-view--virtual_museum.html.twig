@@ -37,7 +37,8 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-
+<link href="/themes/tulpe_theme/vendor/lightGallery/dist/css/lightgallery.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 {{ title_prefix }}
 {{ title }}
 {{ title_suffix }}
@@ -51,7 +52,7 @@
 {{ exposed }}
 {{ attachment_before }}
 <div class="clearfix"></div>
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }} id="lightgallery">
   {{ rows }}
   {{ empty }}
   {{ pager }}
@@ -67,3 +68,23 @@
 {% endif %}
 
 {{ feed_icons }}
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#lightgallery').lightGallery({
+		share: false,
+		pager: false,
+		thumbnail: false,
+		animateThumb: true,
+        showThumbByDefault: false,
+		autoplay: false,
+		autoplayControls: false,
+		progressBar: false,
+		mousewheel: false,
+		controls: false
+	});
+});
+</script>
+<script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+<script src="/themes/tulpe_theme/vendor/lightGallery/dist/js/lightgallery-all.min.js"></script>
+<script src="/themes/tulpe_theme/vendor/lightGallery/lib/jquery.mousewheel.min.js"></script>
