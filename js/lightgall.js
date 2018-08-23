@@ -1,10 +1,10 @@
 $(window).on("load", function() {
-      $('#lightgallery').lightGallery({
+	$('#lightgallery').lightGallery({
 		share: false,
 		pager: false,
 		thumbnail: false,
 		animateThumb: true,
-                showThumbByDefault: false,
+		showThumbByDefault: false,
 		autoplay: false,
 		autoplayControls: false,
 		progressBar: false,
