@@ -5,10 +5,20 @@ global-styling-and-scripts:
     'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css': { type: external, minified: true }
     vendor/font-awesome/css/font-awesome.min.css: { minified: true }
     'https://use.typekit.net/awb5aoh.css': { type: external }
+    vendor/lightGallery/dist/css/lightgallery.css: {}
     css/style.css: {}
   js:
     'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js': { type: external, minified: true }
     'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js': { type: external, minified: true }
+    'https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js': { type: external, minified: true }
+    vendor/lightGallery/lib/jquery.mousewheel.min.js: { minified: true }
     js/main.js: {}
+    js/lightgall.js: {}
   dependencies:
     - core/jquery
+
+js-header:
+  header: true
+  js:
+    'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js': { type: external, minified: true }
+    'vendor/lightGallery/dist/js/lightgallery-all.min.js': { attributes: {type: text/javascript}, minified: true }
