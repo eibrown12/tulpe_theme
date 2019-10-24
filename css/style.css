@@ -801,14 +801,14 @@ footer .list-inline {
 }
 
 .footer-main {
-  background: #30363d;
+  background: #36454F;
 }
 
 .footer-sub {
   padding-top: 25px;
   padding-bottom: 20px;
   text-align: center;
-  background-color: #222222;
+  background-color: #36454F;//#20292F;
   margin-top: -1px;
 }
 
