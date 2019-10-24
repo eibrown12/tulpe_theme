@@ -51,11 +51,11 @@
  {% block navbar %}
  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/"><img src="/themes/tulpe_theme/logo.png" class="logo" alt="Tulpe Lodge"></a>
+        <a class="navbar-brand" href="/"><img src="/themes/tulpe_theme/tulpe-signature.svg" class="logo" alt="Tulpe Lodge"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive"> 
+        <div class="collapse navbar-collapse" id="navbarResponsive">
 		{% if page.primary_menu %}
 			  {{ page.primary_menu }}
 		{% endif %}
@@ -72,7 +72,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-				<img src="/themes/tulpe_theme/img/turtle102.svg" class="img-fluid col-lg-8 col-md-8 col-sm-6">
+				        <img src="/themes/tulpe_theme/img/turtle102.svg" class="img-fluid col-lg-8 col-md-8 col-sm-6">
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 mx-auto">
 			<div class="site-heading">
-			  
+
 			</div>
 		  </div>
 		</div>
@@ -101,42 +101,68 @@
 {{ page.header }}
 
 
-<div class="container">
+<div class="container mt-4 mb-3">
   <div class="row">
 	{% if page.primary_sidebar or page.secondary_sidebar %}
-		<div class="col-lg-8 col-md-10 mx-auto">
+		<div class="col-lg-8 col-12 mx-auto">
 			{{ page.content }}
 		</div>
-		<div class="col-lg-4 col-md-10 mx-auto">
+		<div class="col-lg-4 col-12 mx-auto">
 			{{ page.primary_sidebar }}
 			{{ page.secondary_sidebar }}
 		</div>
 	{% else %}
-		<div class="col-md-10 mx-auto">
+		<div class="col-12 mx-auto">
 			{{ page.content }}
 		</div>
 	{% endif %}
   </div>
 </div>
 
-<footer class="footer footer-main">
-  <div class="container">
-	<div class="row mx-auto">
-	  <div class="col-md-4">
-		{{ page.first_footer }}
-	  </div>
-	  <div class="col-md-4">
-		{{ page.second_footer }}
-	  </div>
-	  <div class="col-md-4">
-		{{ page.third_footer }}
-	  </div>
-	</div>
+<footer class="footer">
+  {% if page.first_footer or page.second_footer or page.third_footer %}
+  <div class="container-fluid footer-main pt-3">
+  <div class="row mx-auto">
+    {% if page.first_footer %}
+    {% if page.second_footer and page.third_footer %}
+    <div class="col-md-4 mx-auto">
+    {% elseif (page.second_footer and not page.third_footer) or (page.third_footer and not page.second_footer) %}
+    <div class="col-md-6 mx-auto">
+    {% else %}
+    <div class="col-12 mx-auto">
+    {% endif %}
+    {{ page.first_footer }}
+    </div>
+    {% endif %}
+    {% if page.second_footer %}
+    {% if page.first_footer and page.third_footer %}
+    <div class="col-md-4 mx-auto">
+    {% elseif (page.first_footer and not page.third_footer) or (page.third_footer and not page.first_footer) %}
+    <div class="col-md-6 mx-auto">
+    {% else %}
+    <div class="col-12 mx-auto">
+    {% endif %}
+    {{ page.second_footer }}
+    </div>
+    {% endif %}
+    {% if page.third_footer %}
+    {% if page.first_footer and page.second_footer %}
+    <div class="col-md-4 mx-auto">
+    {% elseif (page.first_footer and not page.second_footer) or (page.second_footer and not page.first_footer) %}
+    <div class="col-md-6 mx-auto">
+    {% else %}
+    <div class="col-12 mx-auto">
+    {% endif %}
+    {{ page.third_footer }}
+    </div>
+    {% endif %}
   </div>
-  <div class="container">
+  </div>
+  {% endif %}
+  <div class="container-fluid footer-sub">
 	<div class="row">
 	  <div class="col-lg-12 col-md-10 mx-auto">
-		<p class="copyright">Copyright &copy; 2018, Tulpe Lodge, Narragansett Council, BSA &bull; All Rights Reserved &bull; <a href="/site-information-and-policies">Site Info &amp; Policies</a></p>
+		<p class="copyright">Copyright &copy; {{ "now"|date("Y") }}, Tulpe Lodge, Narragansett Council, BSA &bull; All Rights Reserved &bull; <a href="/site-information-and-policies">Site Info &amp; Policies</a></p>
 	  </div>
 	</div>
   </div>

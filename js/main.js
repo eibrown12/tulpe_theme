@@ -1,6 +1,6 @@
 (function($) {
   "use strict"; // Start of use strict
-	
+
   // Floating label headings for the contact form
   $("body").on("input propertychange", ".floating-label-form-group", function(e) {
     $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
@@ -12,11 +12,18 @@
 
   // Show the navbar when the page is scrolled up
   var MQL = 992;
-  
-  $(document).scroll(function () {
-	var $nav = $(".bg-light");
-	$nav.toggleClass('scrolled shadow-sm', $(this).scrollTop() > $nav.height());
-  });
+
+  var $documentHeight = $(document).outerHeight();
+  var $windowHeight = $(window).height();
+  var dimensions = { documentHeight : $documentHeight, windowHeight : $windowHeight };
+  console.log(dimensions);
+  if ($documentHeight > ($windowHeight+162)) {
+    $(document).scroll(function () {
+  	var $nav = $(".bg-light");
+  	$nav.toggleClass('scrolled shadow-sm', $(this).scrollTop() > $nav.height());
+    });
+  }
+
   //primary navigation slide-in effect
   /*if ($(window).width() > MQL) {
     var headerHeight = $('#mainNav').height();

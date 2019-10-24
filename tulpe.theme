@@ -15,9 +15,6 @@ function tulpe_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     $form['keys']['#attributes']['placeholder'] = t('Search');
   }
-  if ($form_id == 'search_form') {
-    $form['keys']['#attributes']['placeholder'] = t('Search');
-  }
   if ($form_id == 'user_login_form') {
     $form['name']['#prefix'] = '<div class="col-lg-8 mx-auto text-center card my-4"><div class="card-body"><div class="control-group form-group">';
 	$form['name']['#suffix'] = '</div>';

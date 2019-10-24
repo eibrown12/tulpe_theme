@@ -16,5 +16,5 @@
  * @ingroup themeable
  */
 #}
-{% set link = link|merge({ '#attributes': { 'class': [ 'nav-link' ] } }) %}
+{% set link = link|merge({ '#attributes': { 'class': [ 'nav-link', is_active ? 'active' ] } }) %}
 <li{{ attributes }} class="nav-item">{{ link }}</li>
