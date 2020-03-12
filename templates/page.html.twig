@@ -85,12 +85,13 @@
 	{% else %}
 		<header class="masthead" style="background-image: url('/themes/tulpe_theme/img/tulpe-banner.jpg')">
 	{% endif %}
-	  <div class="overlay"></div>
 	  <div class="container">
 		<div class="row">
 		  <div class="col-lg-8 col-md-10 mx-auto">
 			<div class="site-heading">
-
+        {% if page.banner_text %}
+          {{ page.banner_text }}
+        {% endif %}
 			</div>
 		  </div>
 		</div>
